@@ -1,0 +1,61 @@
+---
+title: "How to put margins on tables"
+author: "Htet Phyo Aung"
+date: "2022-11-25"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE,
+                      comment="",
+                      message=FALSE)
+```
+
+
+The addmargins function will be used in the tutorial’s two examples to annotate the margin values on table objects.
+
+To be more specific, the instruction includes the following details:
+
+Providing Examples of Data
+
+The data listed below will serve as the foundation for this R tutorial.
+
+```{r}
+data <- data.frame(x1 = c(LETTERS[1:3], "B", "B", "C"),x2 = letters[1:2])
+data
+```
+
+Consider the previous table. It demonstrates how the sample data frame has two variables and six rows.
+
+Then, using these data, we can build a table object (a contingency table).
+
+```{r}
+tab <- table(data)                        
+tab
+```
+
+### Example 1:-Incorporate Sum Margins into the Contingency Table.
+
+Addmargins() Function Utilization
+
+I’ll show you how to add the sum of each row and column to a table’s margins using the addmargins function in Example 1.
+
+Take into account the R code below:
+
+tab_sum <- addmargins(tab, FUN = sum)   
+tab_sum 
+
+```{r}
+tab_sum <- addmargins(tab, FUN = sum)   
+tab_sum 
+```
+
+As you can see, we have a row and column that contain the sum margins of our data that are annotated.
+
+
+
+
+
+
+
+
